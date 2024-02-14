@@ -1,5 +1,5 @@
 ## Roadmap:
-- [ ] Add test data from the assignment
+- [x] Add test data from the assignment
 - [ ] Create all tables
   - [ ] Product (No need for variants for now they can be added later easily)
   - [ ] Order
@@ -21,7 +21,7 @@ Order:
 - Add a method to recalculate all totals using the original line items price and the adjustments
 
 Line items:
-- A line item should have and original value, final value and a quantity
+- A line item should have original value, final value and a quantity
 
 Promos:
 - Promos should be an atomic class with an #apply method which will change create adjustments and update order/line-items total
