@@ -10,5 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_14_163525) do
+  create_table "adjustments", force: :cascade do |t|
+    t.decimal "amount", precision: 6, scale: 2, default: "0.0", null: false
+    t.integer "order_id"
+    t.integer "line_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.decimal "price", precision: 6, scale: 2, default: "0.0", null: false
+    t.decimal "final_price", precision: 6, scale: 2, default: "0.0", null: false
+    t.integer "product_id"
+    t.integer "order_id"
+    t.integer "quantity", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "total", precision: 7, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "sku"
+    t.decimal "price", precision: 6, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "promos", force: :cascade do |t|
+    t.string "rule_class"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
