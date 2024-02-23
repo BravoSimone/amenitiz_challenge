@@ -1,11 +1,11 @@
 ## Roadmap:
 - [x] Add test data from the assignment
-- [ ] Create all tables
-  - [ ] Product (No need for variants for now they can be added later easily)
-  - [ ] Order
-  - [ ] Line items
-  - [ ] Promos
-  - [ ] Adjustments
+- [x] Create all tables
+  - [x] Product (No need for variants for now they can be added later easily)
+  - [x] Order
+  - [x] Line items
+  - [x] Promos
+  - [x] Adjustments
 - [ ] Add models specs
 - [ ] Add models implementation
 - [ ] Create order with products as line items
