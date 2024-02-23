@@ -6,7 +6,7 @@
   - [x] Line items
   - [x] Promos
   - [x] Adjustments
-- [ ] Add models specs
+- [x] Add models specs
 - [ ] Add models implementation
 - [ ] Create order with products as line items
 - [ ] Promos can be applied
