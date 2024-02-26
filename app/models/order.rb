@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   has_many :line_items
   has_many :adjustments
 
+  AVAILABLE_PROMOS = ["CoffeePromo", "StrawberriesPromo", "TeaPromo"]
+
   def add_product(product, quantity = 1)
     if line_item = LineItem.find_by(product_id: product.id, order: self.id)
       line_item.quantity += quantity
@@ -16,7 +18,17 @@ class Order < ApplicationRecord
       )
     end
 
+    apply_adjustments
     update_total
+  end
+
+  def apply_adjustments
+    self.adjustments.delete_all
+
+    AVAILABLE_PROMOS.each do |promo_class|
+      promo_instance = "Promos::#{promo_class}".constantize.new(self.id)
+      promo_instance.apply if promo_instance.eligible?
+    end
   end
 
   def update_total
@@ -27,6 +39,6 @@ class Order < ApplicationRecord
   private
 
   def line_items_total
-    line_items.pluck(:final_price, :quantity).map { |tuple| tuple[0] * tuple[1] }.sum
+    line_items.pluck(:final_price).sum
   end
 end
