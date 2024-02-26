@@ -84,12 +84,4 @@ RSpec.describe Order, model: true do
       end
     end
   end
-
-  describe '#promos' do
-    let!(:promo) { create(:promo, order: order) }
-
-    it 'returns all order and line items promos' do
-      expect(order.promos.to_a).to eq([promo])
-    end
-  end
 end

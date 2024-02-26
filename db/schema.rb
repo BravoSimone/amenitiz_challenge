@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_14_163525) do
     t.decimal "amount", precision: 6, scale: 2, default: "0.0", null: false
     t.integer "order_id"
     t.integer "line_item_id"
+    t.string "promo_class"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,13 +40,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_14_163525) do
     t.string "name"
     t.string "sku"
     t.decimal "price", precision: 6, scale: 2, default: "0.0", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "promos", force: :cascade do |t|
-    t.string "rule_class"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
