@@ -74,13 +74,12 @@ RSpec.describe Order, model: true do
   end
 
   context 'when a line item promo is triggered' do
-    xit 'updates order total correctly' do
-      #TODO
-    end
-
     context 'and the same line item is added to the cart' do
-      xit 'doesn\'t apply the same promo twice' do
-        expect(order.promos).to eq(order.promos.uniq)
+      it 'doesn\'t apply the same promo twice' do
+        order.add_product(product_gr1, 2)
+        expect(order.adjustments.count).to eq(1)
+        order.add_product(product_gr1, 2)
+        expect(order.adjustments.count).to eq(1)
       end
     end
   end
