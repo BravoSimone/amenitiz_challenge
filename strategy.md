@@ -7,10 +7,10 @@
   - [x] Promos
   - [x] Adjustments
 - [x] Add models specs
-- [ ] Add models implementation
-- [ ] Create order with products as line items
-- [ ] Promos can be applied
-- [ ] Add way to edit products, promos and orders
+- [x] Add models implementation
+- [x] Create order with products as line items
+- [x] Promos can be applied
+- [-] Add way to edit products, promos and orders
 
 
 ## Notes for models
