@@ -11,6 +11,7 @@
 - [x] Create order with products as line items
 - [x] Promos can be applied
 - [-] Add way to edit products, promos and orders
+- [ ] Add simple UI to make everything work
 
 
 ## Notes for models
@@ -23,8 +24,5 @@ Order:
 Line items:
 - A line item should have original value, final value and a quantity
 
-Promos:
-- Promos should be an atomic class with an #apply method which will change create adjustments and update order/line-items total
-
 Adjustment:
-- Can be oder wise or line item wise
+- Can be oder wise or line item wise and it uses an auxilary class which is responsible to apply the promo
