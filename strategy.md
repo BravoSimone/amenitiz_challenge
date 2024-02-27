@@ -10,8 +10,8 @@
 - [x] Add models implementation
 - [x] Create order with products as line items
 - [x] Promos can be applied
-- [-] Add way to edit products, promos and orders
-- [ ] Add simple UI to make everything work
+- [-] Add way to edit products, promos and orders (Partially done, just products can be edited)
+- [x] Add simple UI to make everything work
 
 
 ## Notes for models
