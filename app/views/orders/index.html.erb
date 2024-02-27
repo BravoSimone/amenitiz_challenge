@@ -1,0 +1,7 @@
+<h1>Orders</h1>
+
+<%= button_to 'Create Order', orders_path, method: :create %>
+
+<% @orders.each do |order| %>
+  <p><%= link_to "Order N: #{order.id}", order %> Total <%= order.total %></p>
+<% end %>

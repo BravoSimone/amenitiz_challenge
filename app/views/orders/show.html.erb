@@ -1,0 +1,21 @@
+<h1>Order number: <%= @order.id %></h1>
+<%= button_to 'Destroy Order', order_path(@order), method: :delete %>
+<%= link_to 'Back', orders_path %>
+
+<h1>Order</h1>
+<% @line_items.each do |line_item| %>
+  <p>
+    <%= line_item.product.name %> x<%= line_item.quantity %> <%= line_item.final_price %>
+  </p>
+<% end %>
+<p>Total: <%= @order.total %></p>
+
+<h1>Products</h1>
+<% @products.each do |product| %>
+  <p>
+    <%= button_to '+', order_add_product_path(@order.id, product.id), method: :put %>
+    <%= product.name %>
+    <%= product.sku %>
+    <%= product.price %>
+  </p>
+<% end %>
