@@ -77,9 +77,9 @@ RSpec.describe Order, model: true do
     context 'and the same line item is added to the cart' do
       it 'doesn\'t apply the same promo twice' do
         order.add_product(product_gr1, 2)
-        expect(order.adjustments.count).to eq(1)
+        expect(order.adjustments.reload.count).to eq(1)
         order.add_product(product_gr1, 2)
-        expect(order.adjustments.count).to eq(1)
+        expect(order.adjustments.reload.count).to eq(1)
       end
     end
   end

@@ -23,7 +23,7 @@ class Order < ApplicationRecord
   end
 
   def apply_adjustments
-    self.adjustments.delete_all
+    self.adjustments.destroy_all
 
     AVAILABLE_PROMOS.each do |promo_class|
       promo_instance = "Promos::#{promo_class}".constantize.new(self.id)
