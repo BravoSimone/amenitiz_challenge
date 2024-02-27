@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 3.3.0
 
-Things you may want to cover:
+DB: sqlite
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a regular rails application, to boot it up you just need to run `bin/setup`
+The front end has been rushed just to give a way to check out the backend work.
+Right now you can just create and edit products, add products to the order, and delete an order.
